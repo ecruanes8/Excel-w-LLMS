@@ -14,9 +14,9 @@ To run the program:
   python main.py
 
 This will then prompt you to either enter 'help' for commands available then you can: 
-  --> load csv files
-  --> switch databases
-  --> list all available tables
-  --> ask using an LLM
-  --> make a SQL query
-  --> exit the program. 
+  - load csv files
+  - switch databases
+  - list all available tables
+  - ask using an LLM
+  - make a SQL query
+  - exit the program. 
