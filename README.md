@@ -2,13 +2,12 @@ The purpose of this project is to create an Excel AI assistant by implementing a
 
 Modulation of Excel w/ LLMS: 
   excel_ai_assistant/               ← Your project folder
-  ├── main.py                      ← CLI entry point
-  ├── csv_to_sqlite.py             ← CSV-to-SQLite class (DB logic)
-  ├── llm_implementation.py        ← LLM prompt building and API call
-  ├── utils.py                     ← (Optional) helper functions or shared constants
-  ├── students.csv                 ← Example CSV
-  ├── requirements.txt             ← Python dependencies
-  └── error_log.txt                ← Logged errors
+   - main.py                      ← CLI entry point
+   - csv_creator.py               ← CSV creator for examples
+   - csv_to_sqlite.py             ← CSV-to-SQLite class (DB logic)
+   - llm_implementation.py        ← LLM prompt building and API call
+   - students.csv                 ← Example CS
+   - error_log.txt                ← Logged errors
 
 
 To run the program: 
