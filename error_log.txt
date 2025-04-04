@@ -1,0 +1,59 @@
+2025-04-03 21:54:34,113 ERROR:LLM Ask Error
+Traceback (most recent call last):
+  File "/Users/Eve/EC530/Excel-w-LLMS/main.py", line 34, in main
+    schema = db.get_existing_schema(table)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Eve/EC530/Excel-w-LLMS/csv_to_sqlite.py", line 71, in get_existing_schema
+    schema = self.get_existing_schema(table)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Eve/EC530/Excel-w-LLMS/csv_to_sqlite.py", line 71, in get_existing_schema
+    schema = self.get_existing_schema(table)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Eve/EC530/Excel-w-LLMS/csv_to_sqlite.py", line 71, in get_existing_schema
+    schema = self.get_existing_schema(table)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  [Previous line repeated 995 more times]
+RecursionError: maximum recursion depth exceeded
+2025-04-03 21:56:44,176 ERROR:LLM Ask Error
+Traceback (most recent call last):
+  File "/Users/Eve/EC530/Excel-w-LLMS/main.py", line 37, in main
+    sql = ask_llm(prompt)
+          ^^^^^^^^^^^^^^^
+  File "/Users/Eve/EC530/Excel-w-LLMS/llm_implementation.py", line 15, in ask_llm
+    response = openai.ChatCompletion.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/openai/lib/_old_api.py", line 39, in __call__
+    raise APIRemovedInV1(symbol=self._symbol)
+openai.lib._old_api.APIRemovedInV1: 
+
+You tried to access openai.ChatCompletion, but this is no longer supported in openai>=1.0.0 - see the README at https://github.com/openai/openai-python for the API.
+
+You can run `openai migrate` to automatically upgrade your codebase to use the 1.0.0 interface. 
+
+Alternatively, you can pin your installation to the old version, e.g. `pip install openai==0.28`
+
+A detailed migration guide is available here: https://github.com/openai/openai-python/discussions/742
+
+2025-04-03 22:00:01,052 ERROR:LLM Ask Error
+Traceback (most recent call last):
+  File "/Users/Eve/EC530/Excel-w-LLMS/main.py", line 37, in main
+    sql = ask_llm(prompt)
+          ^^^^^^^^^^^^^^^
+  File "/Users/Eve/EC530/Excel-w-LLMS/llm_implementation.py", line 15, in ask_llm
+    response = openai.ChatCompletion.create(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/openai/api_resources/chat_completion.py", line 25, in create
+    return super().create(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 149, in create
+    ) = cls.__prepare_create_request(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/openai/api_resources/abstract/engine_api_resource.py", line 106, in __prepare_create_request
+    requestor = api_requestor.APIRequestor(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/openai/api_requestor.py", line 138, in __init__
+    self.api_key = key or util.default_api_key()
+                          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/openai/util.py", line 186, in default_api_key
+    raise openai.error.AuthenticationError(
+openai.error.AuthenticationError: No API key provided. You can set your API key in code using 'openai.api_key = <API-KEY>', or you can set the environment variable OPENAI_API_KEY=<API-KEY>). If your API key is stored in a file, you can point the openai module at it with 'openai.api_key_path = <PATH>'. You can generate API keys in the OpenAI web interface. See https://platform.openai.com/account/api-keys for details.
